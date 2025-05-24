@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
+"""
+This module provides a function to determine the shape of a matrix.
+"""
+
 
 def matrix_shape(matrix):
+    """
+    Returns the shape of a matrix as a list of dimensions.
+    Args:
+        matrix (list): A nested list representing the matrix.
+    Returns:
+        list: A list of integers representing the dimensions of the matrix.
+    """
     shape = []
     while isinstance(matrix, list):
         shape.append(len(matrix))
         matrix = matrix[0] if matrix else []
     return shape
-
-matrix_shape = __import__('2-size_me_please').matrix_shape
-
-mat1 = [[1, 2], [3, 4]]
-print(matrix_shape(mat1))
-mat2 = [[[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]],
-        [[16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]]
-print(matrix_shape(mat2))
