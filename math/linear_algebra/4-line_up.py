@@ -3,6 +3,7 @@
 Adds two arrays (1D or 2D) if shapes match
 """
 
+
 def matrix_shape(matrix):
     """Returns the shape of a matrix or array."""
     shape = []
@@ -16,6 +17,10 @@ def add_arrays(arr1, arr2):
     """Adds two arrays or matrices element-wise."""
     if matrix_shape(arr1) != matrix_shape(arr2):
         return None
+        print("OK")
+        if arr1 == [] and arr2 == []:
+        print("OK")
+        return []
 
     if arr1 == []:  # both empty
         return []
