@@ -1,32 +1,20 @@
 #!/usr/bin/env python3
-"""
-Adds two arrays (1D or 2D) if shapes match
-"""
-
-
-def matrix_shape(matrix):
-    """Returns the shape of a matrix or array."""
-    shape = []
-    while isinstance(matrix, list):
-        shape.append(len(matrix))
-        matrix = matrix[0] if matrix else []
-    return shape
+'''
+Module that adds two arrays
+'''
 
 
 def add_arrays(arr1, arr2):
-    """Adds two arrays or matrices element-wise."""
-    if matrix_shape(arr1) != matrix_shape(arr2):
-        if arr1 == [] and arr2 == []:
-            print("OK")  # both arrays are empty
-            return []
-        print("OK")  # arrays are not the same shape
-        return None
+    '''
+    Returns a new array that adds two other arrays together
+    '''
+    n1 = len(arr1)
+    n2 = len(arr2)
+    result = []
 
-    # Now shapes match, proceed to add
-    if isinstance(arr1[0], list):  # 2D
-        return [
-            [arr1[i][j] + arr2[i][j] for j in range(len(arr1[0]))]
-            for i in range(len(arr1))
-        ]
-    else:  # 1D
-        return [arr1[i] + arr2[i] for i in range(len(arr1))]
+    if n1 == n2:
+        for i in range(n1):
+            result.append(arr1[i] + arr2[i])
+        return result
+    return None
+    
