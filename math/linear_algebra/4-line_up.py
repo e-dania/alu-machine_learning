@@ -17,4 +17,3 @@ def add_arrays(arr1, arr2):
             result.append(arr1[i] + arr2[i])
         return result
     return None
-    
